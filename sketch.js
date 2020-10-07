@@ -60,7 +60,7 @@ function setup() {
  slingShot = new SlingShot(polygon,{x:100,y:350});
   Engine.run(engine);
 
-  rbg(0);
+  fillColor("white");
   text("Drag The Polygon To Destroy The Blocks",200,20);
 }
 
