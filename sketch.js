@@ -57,8 +57,11 @@ function setup() {
   box9 = new BoxClass(800,320,35,50)
 
 
- slingShot = new SlingShot(polygon,{x:100,y:400});
+ slingShot = new SlingShot(polygon,{x:100,y:350});
   Engine.run(engine);
+
+  rbg(0);
+  text("Drag The Polygon To Destroy The Blocks",200,20);
 }
 
 function draw() {
@@ -91,6 +94,7 @@ function draw() {
   box7.display();
   box8.display();
   box9.display();
+  slingShot.display();
 
   image(polygonImg,polygon.position.x,polygon.position.y,50,50)
   drawSprites();
@@ -101,9 +105,8 @@ function mouseDragged(){
 function mouseReleased(){
   slingShot.fly();
 }
-
 function keyPressed(){
   if(keyCode===32){
-    slingShot.attach(this.polygon);
+    slingShot.attach(this.body);
   }
 }

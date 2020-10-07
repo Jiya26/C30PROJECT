@@ -14,16 +14,19 @@ class SlingShot{
     fly(){
         this.sling.bodyA = null;
     }
+    attach(body){
+        this.sling.bodyA=body;
+    }
+
 
     display(){
-        bird.display();
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
             push();
             strokeWeight(8);
             stroke(48,22,8);
-            line(pointA.x,pointA.y,pointB.x,pointB.y);
+            line(pointA.x+20,pointA.y,pointB.x+15,pointB.y);
             pop();
         }
     }
