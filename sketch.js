@@ -60,8 +60,7 @@ function setup() {
  slingShot = new SlingShot(polygon,{x:100,y:350});
   Engine.run(engine);
 
-  fillColor("white");
-  text("Drag The Polygon To Destroy The Blocks",200,20);
+
 }
 
 function draw() {
@@ -95,6 +94,9 @@ function draw() {
   box8.display();
   box9.display();
   slingShot.display();
+  fill("white");
+  text("Drag The Polygon To Destroy The Blocks",200,20);
+  text("Press Space for second chance",1000,500);
 
   image(polygonImg,polygon.position.x,polygon.position.y,50,50)
   drawSprites();
@@ -107,6 +109,7 @@ function mouseReleased(){
 }
 function keyPressed(){
   if(keyCode===32){
-    slingShot.attach(this.body);
+    slingShot.attach(polygon);
+    
   }
 }
