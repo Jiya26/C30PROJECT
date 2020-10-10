@@ -11,12 +11,13 @@ class SlingShot{
         World.add(world,this.sling);
     }
 
-    fly(){
-        this.sling.bodyA = null;
-    }
     attach(body){
         this.sling.bodyA=body;
     }
+    fly(){
+        this.sling.bodyA = null;
+    }
+    
 
 
     display(){
@@ -24,10 +25,14 @@ class SlingShot{
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
             push();
-            strokeWeight(8);
+
             stroke(48,22,8);
-            line(pointA.x+20,pointA.y,pointB.x+15,pointB.y);
-            pop();
+
+            if(pointA.x<220){
+                strokeWeight(8);
+                line(pointA.x+20,pointA.y,pointB.x+15,pointB.y);
+            }
+          pop();
         }
     }
     
